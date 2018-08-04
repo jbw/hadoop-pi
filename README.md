@@ -2,11 +2,13 @@
 
 ### Install datanode
 
-`./install.sh`
+`sudo ./install.sh`
 
 ### Install namenode
 
-`./install.sh MASTER`
+`sudo ./install.sh MASTER`
+
+`sudo` access needed to install Hadoop. 
 
 ### Configure hosts
 
