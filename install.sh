@@ -13,6 +13,9 @@ echo "Installing $NODE_TYPE Hadoop"
 
 wget https://github.com/jbw/build-hadoop/releases/download/3.0.3-armv7l/hadoop-3.0.3.tar.gz && tar -xzvf hadoop-3.0.3.tar.gz && mv hadoop-3.0.3 /usr/local/hadoop
 
+
+export HADOOP_HOME=/usr/local/hadoop 
+
 mkdir -p ~/hdfs/datanode && \
 mkdir $HADOOP_HOME/logs
 
@@ -26,7 +29,8 @@ cp ./hadoop-config/start-hadoop.sh ~/start-hadoop.sh && \
 
 ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
-if [NODE_TYPE eq 'MASTER'] then
+if [ $NODE_TYPE = "MASTER" ] 
+then
     echo "Setting up NameNode"
     cp ./hadoop-config-master/slaves $HADOOP_HOME/etc/hadoop/slaves
     mkdir -p ~/hdfs/namenode
