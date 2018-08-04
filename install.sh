@@ -25,6 +25,8 @@ cp ./hadoop-config/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml && \
 cp ./hadoop-config-master/slaves $HADOOP_HOME/etc/hadoop/slaves && \
 cp ./hadoop-config/start-hadoop.sh ~/start-hadoop.sh && \
 
+ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
 chmod +x ~/start-hadoop.sh && \
 chmod +x $HADOOP_HOME/sbin/start-dfs.sh && \
 chmod +x $HADOOP_HOME/sbin/start-yarn.sh && \
