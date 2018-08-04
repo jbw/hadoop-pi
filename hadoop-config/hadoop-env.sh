@@ -22,7 +22,7 @@
 # remote nodes.
 
 # The java implementation to use.
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/
 
 # The jsvc implementation to use. Jsvc is required to run secure datanodes
 # that bind to privileged ports to provide authentication of data transfer
@@ -45,11 +45,11 @@ done
 #export HADOOP_HEAPSIZE=
 #export HADOOP_NAMENODE_INIT_HEAPSIZE=""
 
-export HDFS_NAMENODE_USER="root"
-export HDFS_DATANODE_USER="root"
-export HDFS_SECONDARYNAMENODE_USER="root"
-export YARN_RESOURCEMANAGER_USER="root"
-export YARN_NODEMANAGER_USER="root"
+export HDFS_NAMENODE_USER="pi"
+export HDFS_DATANODE_USER="pi"
+export HDFS_SECONDARYNAMENODE_USER="pi"
+export YARN_RESOURCEMANAGER_USER="pi"
+export YARN_NODEMANAGER_USER="pi"
 
 # Extra Java runtime options.  Empty by default.
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true"
