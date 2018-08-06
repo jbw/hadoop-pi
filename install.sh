@@ -1,6 +1,9 @@
 #!/bin/bash
 
-NODE_TYPE=${1:-MASTER}
+NODE_TYPE=${1:-SLAVE}
+
+echo -e "\n\nInstalling $NODE_TYPE node\n\n"
+
 
 echo "Installing system dependencies"
 
@@ -26,13 +29,16 @@ cp ./hadoop-config/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml && \
 cp ./hadoop-config/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml && \
 cp ./hadoop-config/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml && \
 cp ./hadoop-config/start-hadoop.sh ~/start-hadoop.sh && \
+cp ./hadoop-config/.bashrc ~/.bashrc && source ~/.bashrc
 
-ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+ssh-keygen -t rsa -f -y ~/.ssh/id_rsa -P '' && cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
 if [ $NODE_TYPE = "MASTER" ] 
 then
     echo "Setting up NameNode"
     cp ./hadoop-config-master/slaves $HADOOP_HOME/etc/hadoop/slaves
+    cp ./hadoop-config-master/hosts /etc/hosts
+
     mkdir -p ~/hdfs/namenode
     echo "Formatting Hadoop NameNode"
     /usr/local/hadoop/bin/hdfs namenode -format
