@@ -6,11 +6,11 @@
     </property>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>file:///root/hdfs/namenode</value>
+        <value>file:///home/pi/hdfs/namenode</value>
     </property>
     <property>
         <name>dfs.datanode.data.dir</name>
-        <value>file:///root/hdfs/datanode</value>
+        <value>file:///home/pi/hdfs/datanode</value>
     </property>
 
 </configuration>
