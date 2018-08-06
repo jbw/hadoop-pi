@@ -25,6 +25,7 @@ sudo chmod 777 -R /usr/local/hadoop/
 
 sudo mkdir -p /opt/hadoop_tmp/hdfs/namenode 
 sudo mkdir -p /opt/hadoop_tmp/hdfs/datanode
+sudo chmod 777 -R /opt/hadoop_tmp
 
 mkdir $HADOOP_HOME/logs
 
