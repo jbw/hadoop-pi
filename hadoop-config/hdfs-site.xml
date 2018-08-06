@@ -12,7 +12,8 @@
         <name>dfs.datanode.data.dir</name>
         <value>file:///home/pi/hdfs/datanode</value>
     </property>
-      <name>hadoop.tmp.dir</name>
+    <property>
+        <name>hadoop.tmp.dir</name>
         <value>file:///home/pi/tmp/</value>
     </property>
 </configuration>
