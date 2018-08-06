@@ -21,9 +21,11 @@ tar -xzvf hadoop-3.0.3.tar.gz && \
 mkdir /usr/local/hadoop && \
 mv ./hadoop-3.0.3/* /usr/local/hadoop
 
+sudo chmod 777 -R /usr/local/hadoop/
 
+sudo mkdir -p /opt/hadoop_tmp/hdfs/namenode 
+sudo mkdir -p /opt/hadoop_tmp/hdfs/datanode
 
-mkdir -p ~/hdfs/datanode && \
 mkdir $HADOOP_HOME/logs
 
 cp ./hadoop-config/ssh_config ~/.ssh/config && \

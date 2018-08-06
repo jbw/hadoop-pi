@@ -6,14 +6,14 @@
     </property>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>file:///home/pi/hdfs/namenode</value>
+        <value>/opt/hadoop_tmp/hdfs/namenode</value>
     </property>
     <property>
         <name>dfs.datanode.data.dir</name>
-        <value>file:///home/pi/hdfs/datanode</value>
+        <value>/opt/hadoop_tmp/hdfs/datanode</value>
     </property>
     <property>
-        <name>hadoop.tmp.dir</name>
-        <value>file:///home/pi/tmp/</value>
+        <name>dfs.namenode.http-address</name>
+        <value>hadoop-master:50070</value>
     </property>
 </configuration>
